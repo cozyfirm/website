@@ -1,0 +1,73 @@
+.text__editor__w{
+    position: relative; left: 0px; width: 100%; padding-bottom: 64px;     background: $bcgClr;
+
+    .te__inner{
+        position: relative; width: 1500px; left: calc(50% - 750px); min-height: 120px; background: #1E1F22; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2);
+
+        .te__header{
+            position: relative; width: 100%; height: 40px; display: flex; gap: 32px; padding: 0px 16px;
+            .te__header__elem{
+                position: relative; display: flex; gap: 8px; height: 100%; align-items: center;
+                img{
+                    height: 14px;
+                }
+                i, p{color:$white;}
+                i{
+                    font-size: 10px; color: $muted;
+                }
+            }
+        }
+
+        .te__body{
+            position: relative; width: 100%; display: flex; justify-content: space-between; height: 620px;
+
+            .te__controls{
+                position: relative; width: 64px; justify-content: space-between; display: flex; flex-wrap: wrap; flex-direction: column; // border-right: 1px solid rgba(255,255,255,0.1);
+                padding-bottom: 8px;
+                .top__icons, .bottom__icons{
+                    display: flex; width: 100%; flex-wrap: wrap; align-items: flex-start; justify-content: center;
+                    .icon__wrapper{
+                        width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 3px;
+                        img{
+                            max-height: 18px; max-width: 18px;
+                        }
+                        i{
+                            font-size: 18px; color: $muted;
+                        }
+
+                        &.active{
+                            background: $muted;
+                        }
+                    }
+                    hr{
+                        width: 40px; background: $white; opacity: 0.2; margin: 16px 0px;
+                    }
+                }
+            }
+            .editor__wrapper{
+                width: 100%; // border-top: 1px solid rgba(255,255,255,0.1);
+                .editor__wrapper__tabs{
+                    position: relative; width: 100%; height: 32px;  display: flex; gap: 0px;
+                    .tab{
+                        position: relative; display: flex; gap: 8px; height: 32px; align-items: center; padding: 0px 16px;  border-radius: 3px;
+                        &.active{
+                            background: $muted;
+                        }
+                        i, p{
+                            margin: 0px; color: $white; font-size: 14px;
+                        }
+                    }
+                }
+                .editor__wrapper__editor{
+                    position: relative; width: 100%; height: calc(100% - 32px); padding: 0px; display: flex; justify-content: space-between;
+                    .editor__w__numbers{
+                        width: 32px;
+                    }
+                    .ewe_text{
+                        width: calc(100% - 32px); overflow: scroll; letter-spacing: -1px !important; font-family: 'Inter', sans-serif; font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}

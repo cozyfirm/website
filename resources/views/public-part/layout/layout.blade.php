@@ -1,7 +1,7 @@
 <html>
 <head>
     <title> {{ __('Welcome') }} </title>
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('files/images/default/logo.png') }}"/>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('files/images/icons/logo_icon.png') }}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">

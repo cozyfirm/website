@@ -1,0 +1,31 @@
+.experience__tab{
+    position: relative; left: 0px; width: 100%;     background: $bcgClr;
+
+
+    .experience__inner{
+        display: flex; gap: 32px; justify-content: space-between;
+        .experience__left__line{
+            width: 32px; display: flex; justify-content: center; flex-wrap: wrap;
+            .top__icon{
+                width: 32px; height: 32px; display: flex; justify-content: center; align-items: center;
+                img{height: 16px;}
+            }
+            .line__bottom{
+                height: calc(100% - 40px); width: 3px; background: linear-gradient(rgb(51, 179, 174) 40%, transparent);
+            }
+        }
+
+        .experience__text{
+            position: relative; width: calc(100% - 64px); padding-bottom: 64px;
+            h4{
+                color: $white; margin-bottom: 16px; margin-top: 4px;
+            }
+            h1{
+                color: $white;
+            }
+            .gloving__blue{
+                color: #33B3AE;
+            }
+        }
+    }
+}

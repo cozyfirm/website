@@ -1,6 +1,10 @@
 @extends('public-part.layout.layout')
 
 @section('content')
+    <div class="background_image">
+        <img class="right__img" src="{{ asset('files/images/icons/network_2.png') }}" alt="">
+    </div>
+
     <div class="slider">
         <div class="slider__inner inner_wrapper">
             <div class="slider__inner_center">
@@ -34,6 +38,39 @@
                 </div>
             </div>
         </div>
-        <img class="right__img" src="{{ asset('files/images/icons/network.png') }}" alt="">
+    </div>
+    <div class="experience__tab">
+        <div class="experience__inner inner_wrapper">
+            <div class="experience__left__line">
+                <div class="top__icon">
+                    <img src="{{ asset('files/images/icons/atom.png') }}" alt="">
+                </div>
+                <div class="line__ line__bottom"></div>
+            </div>
+            <div class="experience__text">
+                <h4>{{ __('Višegodišnje iskustvo') }}</h4>
+                <h1 class="gloving__blue">{{ __('Sigurni softveri') }}</h1>
+                <h1>{{ __('Ako naš softver radi na našem računaru,') }} <br> {{ __('nadamo se da će i na vašem') }} </h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Text editor -->
+    @include('public-part.home.includes.text-editor')
+
+    <div class="experience__tab">
+        <div class="experience__inner inner_wrapper">
+            <div class="experience__left__line">
+                <div class="top__icon">
+                    <img src="{{ asset('files/images/icons/atom.png') }}" alt="">
+                </div>
+                <div class="line__ line__bottom"></div>
+            </div>
+            <div class="experience__text">
+                <h4>{{ __('Višegodišnje iskustvo') }}</h4>
+                <h1 class="gloving__blue">{{ __('Sigurni softveri') }}</h1>
+                <h1>{{ __('Ako naš softver radi na našem računaru,') }} <br> {{ __('nadamo se da će i na vašem') }} </h1>
+            </div>
+        </div>
     </div>
 @endsection
