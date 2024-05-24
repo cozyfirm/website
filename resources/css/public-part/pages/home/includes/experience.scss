@@ -1,7 +1,6 @@
 .experience__tab{
     position: relative; left: 0px; width: 100%;     background: $bcgClr;
 
-
     .experience__inner{
         display: flex; gap: 32px; justify-content: space-between;
         .experience__left__line{
@@ -10,8 +9,17 @@
                 width: 32px; height: 32px; display: flex; justify-content: center; align-items: center;
                 img{height: 16px;}
             }
+            .line__top{
+                width: 3px;
+                background: linear-gradient(transparent, rgb(51, 179, 174) 30%); height: 128px;
+            }
             .line__bottom{
                 height: calc(100% - 40px); width: 3px; background: linear-gradient(rgb(51, 179, 174) 40%, transparent);
+            }
+        }
+        .experience__left__line__second{
+            .line__bottom{
+                height: calc(100% - 168px);
             }
         }
 
@@ -26,6 +34,9 @@
             .gloving__blue{
                 color: #33B3AE;
             }
+        }
+        .experience__text__padding{
+            padding-top: 128px;
         }
     }
 }
