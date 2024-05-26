@@ -206,4 +206,18 @@ loader.load().then(function (google) {
         console.log(currentLatitude);
         console.log(currentLongitude);
     });
+
+    /* Glowin effect */
+    const container = document.querySelector(".contact__us__inner");
+    container.addEventListener('mousemove', e => {
+        const rect = container.getBoundingClientRect();
+
+        const x = e.clientX;
+        const y = e.clientY;
+
+        console.log(x, y);
+
+        container.style.setProperty("--X", `${x}px`);
+        container.style.setProperty("--y", `${y}px`);
+    })
 });
