@@ -11,17 +11,17 @@
         position: absolute; right: 0px; top: 0px; width: 100%; z-index: -1; opacity: 0.2;
     }
 
-    @media (max-width: 800px) {
-        display: none;
-    }
-
     .slider__inner{
         display: flex; align-items: center; height: 100%;
         .slider__inner_center{
             width: 100%; min-height: 120px;display: flex; justify-content: space-between; gap: 32px;
+            @media (max-width: 800px) {
+                gap: 8px;
+            }
 
             .slider__left__line{
                 width: 32px;display: flex; position: relative;flex-wrap: wrap; justify-content: center; align-content: flex-start; gap: 8px;
+
                 .circle__wrapper{
                     width: 100%; display: flex; justify-content: center; height: 16px;
                     .circle__{
@@ -32,7 +32,11 @@
                     position: relative; width: 3px; height: 120px; // height: 100%;
                 }
                 .line__top{ background: linear-gradient(transparent, $brownClr 30%); height: 160px; }
-                .line__bottom{ background: linear-gradient($brownClr, #42a9bd 80%, #33B3AE); height:calc(100% - 208px); }
+                .line__bottom{
+                    background: linear-gradient($brownClr, #42a9bd 80%, #33B3AE); height:calc(100% - 208px);
+
+                    //@media (max-width: 800px) { height:calc(100% - 272px); }
+                }
                 .middle__icon{
                     position: relative; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
                     img{
@@ -41,31 +45,58 @@
                 }
             }
             .slider__right__text{
-                width: calc(100% - 64px); padding-bottom: 64px;
+                width: calc(100% - 64px);
+                @media (max-width: 800px) { width: calc(100% - 32px); padding-bottom: 0px;}
 
                 h1{
                     font-size: 100px; color: $txtClr2;
+                    @media (max-width: 1300px) { font-size: 80px; }
+                    @media (max-width: 1000px) { font-size: 60px; }
+                    @media (max-width: 800px) { font-size: 48px; }
                 }
-                h4{color:$muted; font-weight: 400;}
+                h4{
+                    color:$muted; font-weight: 400;
+                    @media (max-width: 800px) {
+                        font-size: 20px; margin-top: 16px;
+                    }
+                }
 
                 .forms__wrapper{
                     width: 100%; height: 40px; margin: 96px 0px; display: flex; gap: 0px;
+
+                    @media (max-width: 800px) {
+                        flex-wrap: wrap; gap: 16px; align-items: center; align-content: center;
+                    }
                     input{
                         border: none; background: $white; height: calc(100% - 0px); min-width: 400px; padding: 0px 16px;
                         border-top-left-radius: 3px; border-bottom-left-radius: 3px; margin-right:0px;
+
+                        @media (max-width: 800px) {
+                            min-width: auto; width: 100%;
+                        }
                     }
                     button{
                         height: 100%; background: $brownClr; color: $white; border: 0px; margin-left:0px;
                         font-family: 'Inter', sans-serif; font-weight: 600; padding: 0px 64px; font-size:16px;
 
                         border-top-right-radius: 3px; border-bottom-right-radius: 3px;
+
+                        @media (max-width: 800px) {
+                            min-width: auto; width: 100%;
+                        }
                     }
                 }
                 .technologies__wrapper{
-                    width: 100%; height: 50px; display: flex; gap: 64px; margin-top: 16px; padding-bottom: 128px;
-
+                    width: 100%; height: 50px; display: flex; gap: 64px; margin-top: 16px; padding-bottom: 128px; flex-wrap: wrap;
+                    @media (max-width: 800px) {
+                        height: auto; gap: 16px;
+                    }
                     img{
                         height: 50px; display: flex;
+
+                        @media (max-width: 800px) {
+                            height: 30px;
+                        }
                     }
                 }
             }

@@ -4,4 +4,8 @@
     @media (max-width: 1500px) {
         left: 100px; width: calc(100% - 200px);
     }
+
+    @media (max-width: 1000px) {
+        left: 24px; width: calc(100% - 48px);
+    }
 }

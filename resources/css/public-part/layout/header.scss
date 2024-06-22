@@ -96,6 +96,10 @@ header{
                     height: 24px;
                 }
             }
+            .open__mobile_menu{
+                display: none;
+            }
+            @media (max-width: 1000px) { .open__mobile_menu{display: unset;} }
         }
     }
 }

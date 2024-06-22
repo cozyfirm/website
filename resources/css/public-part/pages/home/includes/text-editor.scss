@@ -4,6 +4,15 @@
     .te__inner{
         position: relative; width: 1500px; left: calc(50% - 750px); min-height: 120px; background: #1E1F22; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2);
 
+        @media (max-width: 1500px) {
+            left: 50px; width: calc(100% - 100px);
+        }
+        @media (max-width: 1000px) {
+            left: 24px; width: calc(100% - 48px);
+
+            overflow: hidden;
+        }
+
         .te__header{
             position: relative; width: 100%; height: 40px; display: flex; gap: 32px; padding: 0px 16px;
             .te__header__elem{
@@ -45,7 +54,7 @@
                 }
             }
             .editor__wrapper{
-                width: 100%; // border-top: 1px solid rgba(255,255,255,0.1);
+                position:relative; width: 100%; // border-top: 1px solid rgba(255,255,255,0.1);
                 .editor__wrapper__tabs{
                     position: relative; width: 100%; height: 32px;  display: flex; gap: 0px;
                     .tab{
@@ -61,10 +70,11 @@
                 .editor__wrapper__editor{
                     position: relative; width: 100%; height: calc(100% - 32px); padding: 0px; display: flex; justify-content: space-between;
                     .editor__w__numbers{
-                        width: 32px;
+                        width: 0px;
                     }
                     .ewe_text{
-                        width: calc(100% - 32px); overflow: scroll; letter-spacing: -1px !important; font-family: 'Inter', sans-serif; font-size: 14px;
+                        position:relative; width: calc(100% - 0px); overflow: scroll; letter-spacing: -1px !important; font-family: 'Inter', sans-serif; font-size: 14px;
+                        display: table-caption; /* Shrink the container */
                     }
                 }
             }
