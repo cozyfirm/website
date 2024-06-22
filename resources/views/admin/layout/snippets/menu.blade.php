@@ -250,6 +250,19 @@
                 </div>
             </div>
         </a>
+        <a href="{{ route('system.projects.index') }}" class="menu-a-link">
+            <div class="s-lm-wrapper">
+                <div class="s-lm-s-elements">
+                    <div class="s-lms-e-img">
+                        <i class="far fa-edit"></i>
+                    </div>
+                    <p>{{__('Projects')}}</p>
+                    <div class="extra-elements">
+                        <div class="ee-t ee-t-b"><p>{{__('More info')}}</p></div>
+                    </div>
+                </div>
+            </div>
+        </a>
 
         <div class="subtitle">
             <h4> {{__('Postavke')}} </h4>

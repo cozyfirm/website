@@ -2,18 +2,13 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\Rest\PagesController;
+use App\Http\Controllers\Admin\Rest\ProjectsController;
 use App\Http\Controllers\Admin\Users\UsersController;
 use App\Http\Controllers\PublicPart\HomeController;
 use App\Http\Controllers\PublicPart\PropertiesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicPart\AuthController;
 use App\Http\Controllers\PublicPart\ContactUsController;
-
-// Init route
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
 
 /**
  *  Public routes; Data visible to all visitors
@@ -76,5 +71,15 @@ Route::prefix('system')->middleware(['auth-middleware'])->group(function () {
         Route::get ('/delete/{id}',              [PagesController::class, 'delete'])->name('system.single-pages.delete');
 
         Route::post('/update-image',             [PagesController::class, 'updateImage'])->name('system.single-pages.update-image');
+    });
+
+    Route::prefix('projects')->group(function () {
+        Route::get('/',                          [ProjectsController::class, 'index'])->name('system.projects.index');
+        Route::get ('/create',                   [ProjectsController::class, 'create'])->name('system.projects.create');
+        Route::post('/save',                     [ProjectsController::class, 'save'])->name('system.projects.save');
+        Route::get ('/preview/{id}',             [ProjectsController::class, 'preview'])->name('system.projects.preview');
+        Route::get ('/edit/{id}',                [ProjectsController::class, 'edit'])->name('system.projects.edit');
+        Route::post('/update',                   [ProjectsController::class, 'update'])->name('system.projects.update');
+        Route::get ('/delete/{id}',              [ProjectsController::class, 'delete'])->name('system.projects.delete');
     });
 });

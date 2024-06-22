@@ -9,7 +9,7 @@
 
                 <div class="footer__address">
                     <h5 class="heading-h5">Adresa:</h5>
-                    <a target="_blank" href="https://maps.app.goo.gl/JaxgLqWyqMFznR7J9"> Kolodvorska 12A, 71000 Sarajevo.</a>
+                    <a target="_blank" href="https://maps.app.goo.gl/JaxgLqWyqMFznR7J9"> Kobilja glava 35, 71000 Sarajevo</a>
                 </div>
                 <div class="footer__contact">
                     <h5 class="heading-h5">Kontakt:</h5>
@@ -51,22 +51,16 @@
                         <h4 class="footer__list1-header">{{ __('Novosti') }}</h4>
                     </li>
                     <li class="footer__list2-item">
-                        <a class="footer__list2-link" href="#">{{ __('Kuće') }}</a>
+                        <a class="footer__list2-link" href="#">{{ __('New projects') }}</a>
                     </li>
                     <li class="footer__list2-item">
-                        <a class="footer__list2-link" href="#">{{ __('Stanovi') }}</a>
+                        <a class="footer__list2-link" href="#">{{ __('IT in 2024') }}</a>
                     </li>
                     <li class="footer__list2-item">
-                        <a class="footer__list2-link" href="#">{{ __('Apartmani') }}</a>
+                        <a class="footer__list2-link" href="#">{{ __('What is DB') }}</a>
                     </li>
                     <li class="footer__list2-item">
-                        <a class="footer__list2-link" href="#"> {{ __('Zemljišta') }} </a>
-                    </li>
-                    <li class="footer__list2-item">
-                        <a class="footer__list2-link" href="#"> {{ __('Poslovni prostori') }} </a>
-                    </li>
-                    <li class="footer__list2-item">
-                        <a class="footer__list2-link" href="#"> {{ __('Vikendice') }} </a>
+                        <a class="footer__list2-link" href="#"> {{ __('IOS or Android?') }} </a>
                     </li>
                 </ul>
             </div>

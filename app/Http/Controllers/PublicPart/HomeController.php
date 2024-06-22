@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\PublicPart;
 
 use App\Http\Controllers\Controller;
+use App\Models\Other\Project;
 use App\Models\Other\SinglePage;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -13,7 +14,10 @@ class HomeController extends Controller{
 
     public function home(): View{
         return view($this->_path . 'home', [
-            'HomeController' => SinglePage::where('id', 1)->first()
+            'HomeController' => SinglePage::where('id', 1)->first(),
+            'inProgress' => Project::where('state', 'in-progress')->get(),
+            'beta' => Project::where('state', 'beta')->get(),
+            'production' => Project::where('state', 'production')->orderBy('title')->get()
         ]);
     }
 
