@@ -3,32 +3,38 @@
 namespace App\Http\Controllers\PublicPart;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use App\Traits\Http\ResponseTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
-class AuthController extends Controller
-{
-    protected string $_path = 'public-part.login.';
+class AuthController extends Controller{
+    use ResponseTrait;
+    protected string $_path = 'public-part.auth.';
 
     public function auth(): View{
         return view($this->_path . 'auth');
     }
-    public function authenticate(Request $request){
+    public function authenticate(Request $request): bool|string {
         try{
-            if(!$request->email) return back()->with('message', __('Molimo unesite Vaš email!'));
-            if(!$request->password) return back()->with('message', __('Molimo unesite Vašu šifru!'));
+            if(!isset($request->username)) return $this->jsonResponse('1102', __('Please, enter your username'));
+            if(!isset($request->password)) return $this->jsonResponse('1103', __('Please, enter your password'));
 
-//            dd($request->all());
-            if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
-                // Ovdje ćemo redirect uraditi na admin panel
+            $user = User::where('username', $request->username)->first();
+            if(!$user) return $this->jsonResponse('1104', __('Unknown username'));
 
-                return redirect()->route('public-part.home');
+            if(Auth::attempt(['username' => $request->username, 'password' => $request->password])){
+                $user = Auth::user();
+
+                return $this->jsonResponse('0000', __('Success'), [
+                    'uri' => route('system.dashboard')
+                ]);
+            }else {
+                return $this->jsonResponse('1105', __('You have entered wrong password'));
             }
-
-            return back()->with('message', __('Neispravni korisnički podaci!'));
         }catch (\Exception $e){
-            return back()->with('message', __('Desila se greška!'));
+            return $this->jsonResponse('1101', __('Error while processing your request. Please contact an administrator'));
         }
     }
     public function logout(){

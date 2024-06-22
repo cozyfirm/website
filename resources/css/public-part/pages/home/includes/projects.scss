@@ -1,11 +1,11 @@
 .projects_wrapper{
     position: relative; left: 0px; width: 100%; background: $bcgClr; padding-bottom: 64px;
     .projects__inner{
-        position:relative; display: flex; width: 1500px; left: calc(50% - 750px);
+        position:relative; display: flex; width: 1400px; left: calc(50% - 700px);
         border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; background: #1E1F22; overflow: hidden; flex-direction: column; flex-wrap: wrap; align-content: flex-start;
         background: #2B2D30;
 
-        @media (max-width: 1500px) {
+        @media (max-width: 1400px) {
             left: 50px; width: calc(100% - 100px);
         }
         @media (max-width: 1000px) {
@@ -65,7 +65,7 @@
             position: relative; width: 100%; overflow: scroll; background: #1E1F22;
 
             .table__wrapper{
-                position: relative; padding: 0px 0px;  width: 1500px;
+                position: relative; padding: 0px 0px;  width: 1400px;
 
                 .table__subheader{
                     position: relative; width: calc(100% - 64px); display: flex; gap: 8px; justify-content: flex-start; align-items: center; padding: 16px 32px;
@@ -94,7 +94,7 @@
                 }
 
                 .project__row{
-                    position: relative; width: 1436px; display: flex; justify-content: space-between; padding: 0px 32px; color: #89949F; border-top: 1px solid rgba(137, 148, 159, 0.3);
+                    position: relative; width: 1336px; display: flex; justify-content: space-between; padding: 0px 32px; color: #89949F; border-top: 1px solid rgba(137, 148, 159, 0.3);
                     flex-shrink:0;
                     .pr_col{
                         border-right: 1px solid rgba(137, 148, 159, 0.3); height: 32px; display: flex; align-items: center; justify-content: flex-start; padding: 0px 8px;
@@ -107,7 +107,7 @@
                         width: 40px;
                     }
                     .pr_col_project{
-                        width: 516px;
+                        width: 416px;
                     }
 
                     .pr_col_col{

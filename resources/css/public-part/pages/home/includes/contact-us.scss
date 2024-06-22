@@ -1,10 +1,10 @@
 .contact__us_wrapper{
     position: relative; left: 0px; width: 100%; background: $bcgClr; padding-bottom: 16px;
     .contact__us__inner{
-        position:relative; display: flex; gap: 32px; justify-content: space-between; width: 1500px; left: calc(50% - 750px); height: 520px;
+        position:relative; display: flex; gap: 32px; justify-content: space-between; width: 1400px; left: calc(50% - 700px); height: 520px;
         border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; background: #1E1F22;
 
-        @media (max-width: 1500px) {
+        @media (max-width: 1400px) {
             left: 50px; width: calc(100% - 100px);
         }
         @media (max-width: 1000px) {

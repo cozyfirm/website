@@ -2,11 +2,13 @@
     <div class="inner__header">
         <div class="inner__h__links">
             <div class="ihl__logo">
-                <img src="{{ asset('files/images/default/logo_white.png') }}" alt="">
+                <a href="{{ route('public-part.home') }}">
+                    <img src="{{ asset('files/images/default/logo_white.png') }}" alt="">
+                </a>
             </div>
             <div class="ihl__links">
                 <div class="ihl__link">
-                    <a href="#">{{ __('O nama') }}</a>
+                    <a href="{{ route('public-part.pages.about-us') }}">{{ __('O nama') }}</a>
                 </div>
                 <div class="ihl__link">
                     <p>{{ __('Naši proizvodi i usluge') }}</p>
@@ -78,7 +80,7 @@
                     {{ __('FAQs') }}
                 </div>
             </a>
-            <a href="#" class="desktop__version">
+            <a href="{{ route('public-part.auth') }}" class="desktop__version">
                 <div class="ihb__btn">
                     {{ __('Prijavite se') }}
                 </div>
@@ -103,7 +105,7 @@
     <div class="mh__body">
         <div class="single_link">
             <div class="link__text">
-                <a href="#">
+                <a href="{{ route('public-part.pages.about-us') }}">
                     <h4>{{ __('O nama') }}</h4>
                 </a>
             </div>
@@ -193,7 +195,7 @@
         </div>
 
         <div class="single_link">
-            <a href="#">
+            <a href="{{ route('public-part.auth') }}">
                 <button>{{ __('Prijavite se') }}</button>
             </a>
         </div>

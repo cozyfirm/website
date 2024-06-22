@@ -8,6 +8,7 @@
 
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
 
         @vite(['resources/css/admin/admin.scss', 'resources/js/admin/admin.js'])
     </head>
@@ -22,5 +23,31 @@
             <!-- Main content of every page -->
             @yield('content')
         </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"> </script>
+        <script>
+
+            $('.summernote').summernote({
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'italic', 'underline', 'clear']],
+                    // ['fontname', ['fontname']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                    ['insert', ['link', ]], // 'picture', 'video'
+                    ['view', ['help']],
+                    ['height', ['height']],
+                ],
+                placeholder: 'Unesite vaš tekst ovdje ..',
+                height : 300
+            });
+
+            if ( $('.summernote').is('[readonly]') ) {
+                $('.summernote').summernote('disable');
+            }
+
+        </script>
     </body>
 </html>

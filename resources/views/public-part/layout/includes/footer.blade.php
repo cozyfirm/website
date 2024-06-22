@@ -13,7 +13,7 @@
                 </div>
                 <div class="footer__contact">
                     <h5 class="heading-h5">Kontakt:</h5>
-                    <a class="underlined" href="tel:0038733741284">+387 61 225 883</a>
+                    <a class="underlined" href="tel:0038733741284">+387 61 509 518</a>
                     <a class="underlined" href="mailto:info@znzkvi.ba"> info@cozyfirm.com </a>
                 </div>
                 <div class="footer__socials">
@@ -48,7 +48,7 @@
                 </ul>
                 <ul class="footer__list2">
                     <li class="footer__list1-item">
-                        <h4 class="footer__list1-header">{{ __('Nekretnine') }}</h4>
+                        <h4 class="footer__list1-header">{{ __('Novosti') }}</h4>
                     </li>
                     <li class="footer__list2-item">
                         <a class="footer__list2-link" href="#">{{ __('Kuće') }}</a>
@@ -75,13 +75,13 @@
             <p> <a href="https://cozyfirm.com/">© {{ date('Y') }} Cozy Firm d.o.o</a> <span>|</span> {{ __('Sva prava zadržana') }} </p>
             <ul class="con__bottom-list">
                 <li class="con__bottom-item">
-                    <a href="#" class="con__bottom-link underlined"> {{ __('Pravila privatnosti') }} </a>
+                    <a href="{{ route('public-part.pages.privacy-policy') }}" class="con__bottom-link underlined"> {{ __('Pravila privatnosti') }} </a>
                 </li>
                 <li class="con__bottom-item">
-                    <a href="#" class="con__bottom-link underlined"> {{ __('Uslovi korištenja') }} </a>
+                    <a href="{{ route('public-part.pages.terms-and-conditions') }}" class="con__bottom-link underlined"> {{ __('Uslovi korištenja') }} </a>
                 </li>
                 <li class="con__bottom-item">
-                    <a href="#" class="con__bottom-link underlined">{{ __('Korisnički kolačići') }}</a>
+                    <a href="{{ route('public-part.pages.cookies') }}" class="con__bottom-link underlined">{{ __('Korisnički kolačići') }}</a>
                 </li>
             </ul>
         </div>
