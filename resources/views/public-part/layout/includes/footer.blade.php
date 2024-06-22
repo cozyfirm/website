@@ -4,7 +4,7 @@
         <div class="footer__con-top">
             <div class="footer__con-left">
                 <a href="{{ route('public-part.home') }}">
-                    <img src="{{ asset('files/images/default/logo_full_white.svg') }}" alt="">
+                    <img src="{{ asset('files/images/default/logo_white.png') }}" alt="">
                 </a>
 
                 <div class="footer__address">

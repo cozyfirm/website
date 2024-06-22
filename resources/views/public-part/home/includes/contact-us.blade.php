@@ -15,7 +15,7 @@
                 </div>
                 <div class="form__element">
                     <label for="phone">{{ __('Vaš telefon') }}</label>
-                    <input type="text" name="phone" id="phone" value="+387 61 ">
+                    <input type="text" name="phone" id="phone" value="+387 ">
                 </div>
                 <div class="form__element form__element__full">
                     <label for="message">{{ __('Vaša poruka') }}</label>

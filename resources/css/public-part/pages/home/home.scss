@@ -11,6 +11,10 @@
         position: absolute; right: 0px; top: 0px; width: 100%; z-index: -1; opacity: 0.2;
     }
 
+    @media (max-width: 800px) {
+        display: none;
+    }
+
     .slider__inner{
         display: flex; align-items: center; height: 100%;
         .slider__inner_center{
@@ -37,15 +41,15 @@
                 }
             }
             .slider__right__text{
-                width: calc(100% - 64px); padding-bottom: 128px;
+                width: calc(100% - 64px); padding-bottom: 64px;
 
                 h1{
-                    font-size: 80px; color: $txtClr2;
+                    font-size: 100px; color: $txtClr2;
                 }
                 h4{color:$muted; font-weight: 400;}
 
                 .forms__wrapper{
-                    width: 100%; height: 40px; margin: 64px 0px; display: flex; gap: 0px;
+                    width: 100%; height: 40px; margin: 96px 0px; display: flex; gap: 0px;
                     input{
                         border: none; background: $white; height: calc(100% - 0px); min-width: 400px; padding: 0px 16px;
                         border-top-left-radius: 3px; border-bottom-left-radius: 3px; margin-right:0px;
@@ -58,9 +62,10 @@
                     }
                 }
                 .technologies__wrapper{
-                    width: 100%; height: 40px; display: flex; gap: 64px; margin-top: 16px; padding-bottom: 128px;
+                    width: 100%; height: 50px; display: flex; gap: 64px; margin-top: 16px; padding-bottom: 128px;
+
                     img{
-                        height: 100%;
+                        height: 50px; display: flex;
                     }
                 }
             }
@@ -72,3 +77,4 @@
 @import "includes/experience";
 @import "includes/text-editor";
 @import "includes/contact-us";
+@import "includes/projects";
