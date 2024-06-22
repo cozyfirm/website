@@ -60,17 +60,21 @@
 
     <div class="experience__tab">
         <div class="experience__inner inner_wrapper">
-            <div class="experience__left__line">
+            <div class="experience__left__line experience__left__line__second">
+                <div class="line__ line__top"></div>
                 <div class="top__icon">
                     <img src="{{ asset('files/images/icons/atom.png') }}" alt="">
                 </div>
                 <div class="line__ line__bottom"></div>
             </div>
-            <div class="experience__text">
-                <h4>{{ __('Višegodišnje iskustvo') }}</h4>
+            <div class="experience__text experience__text__padding">
+                <h4>{{ __('Ažurnost') }}</h4>
                 <h1 class="gloving__blue">{{ __('Sigurni softveri') }}</h1>
                 <h1>{{ __('Ako naš softver radi na našem računaru,') }} <br> {{ __('nadamo se da će i na vašem') }} </h1>
             </div>
         </div>
     </div>
+
+    @include('public-part.home.includes.contact-us')
+
 @endsection

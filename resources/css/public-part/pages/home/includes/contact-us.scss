@@ -1,0 +1,104 @@
+.contact__us_wrapper{
+    position: relative; left: 0px; width: 100%; background: $bcgClr; padding-bottom: 64px;
+    .contact__us__inner{
+        position:relative; display: flex; gap: 32px; justify-content: space-between; width: 1500px; left: calc(50% - 750px); height: 520px;
+        border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; background: #1E1F22;
+
+        .cui__form{
+            position: relative; width: calc(50% - 56px); height: 100%; padding: 32px;
+            .header{
+                width: 100%; padding-bottom: 32px;
+                h3{
+                    margin: 0px; color: $white;
+                }
+            }
+            .form__elements{
+                position: relative; width: 100%; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+
+                .form__element{
+                    position: relative; width: calc(50% - 8px);  display: flex; flex-wrap: wrap;
+                    label{
+                        width: 100%; color: $white; font-family: 'Inter', sans-serif;
+                    }
+                    input, textarea{
+                        width: 100%; margin-top: 8px; background: none; border: 1px solid rgba(255,255,255,0.2); padding: 4px 16px;
+                        color: $white; font-family: 'Inter', sans-serif; height: 36px; border-radius: 3px;
+                    }
+                    input:focus{
+                        outline: 1px solid $brownClr;
+                    }
+                    textarea{
+                        height: 120px; resize: none;
+                    }
+
+                    .icn__wrapper{
+                        display: flex; align-items: center; color: $white; gap: 8px; font-family: 'Inter', sans-serif;
+                        width: 300px;
+                        i{
+                            font-size: 15px;
+                        }
+                        input{
+                            width: 12px; height: 12px;
+                        }
+                        p{
+                            margin-top: 0px; font-size: 15px; font-family: 'Inter', sans-serif; margin-top: 6px;
+                            a{
+                                text-decoration: underline; color: $white;
+
+                            }
+                        }
+                    }
+                    button{
+                        border: none; padding: 8px 32px; background: $brownClr; color: $white; border-radius: 3px;
+                    }
+                }
+                .form__element__full{ width: 100%; }
+                .form__element__between{ justify-content: space-between; align-items: center; margin-top: 16px; }
+            }
+        }
+
+        .cui__map{
+            position: absolute; width: calc(50% + 32px); right: 0px; top: -32px; height: calc(100% + 64px);
+            overflow: hidden; border-top-right-radius: 8px; border-bottom-right-radius: 8px;
+
+
+            //position: relative; width: 50%; height: 700px; top: -120px; right: -50px; rotate: -15deg; background: white; overflow: hidden;
+            .cui__map__stretch {
+                position: relative; left: 90px; top: -140px; width: calc(100% + 200px); height: calc(100% + 200px);
+                rotate: -15deg; overflow: hidden;
+            }
+            .inside__map{
+                position: absolute; width: calc(100% + 0px); height: 100%; rotate: 15deg; left: -140px;
+            }
+        }
+
+        //.cui__map{
+        //    position: relative; width: 50%; height: 700px; top: -120px; right: -50px; rotate: -15deg; background: white; overflow: hidden;
+        //    .cui__map__stretch{
+        //        background: red; position: relative
+        //
+        //        .inside__map{
+        //            //position: absolute; width: calc(100% + 50px); height: 100%; rotate: 15deg; left: -80px;
+        //        }
+        //    }
+        //}
+    }
+
+    .contact__us__inner::before{
+        content: "";
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        border-radius: inherit;
+        background: radial-gradient(
+            //1500px circle at var(--x) var(--y),
+            1500px circle at 50px 50px,
+            rgba(0,153,255,0.623),
+            transparent 35%
+        );
+        opacity: 0;
+        z-index: 200;
+    }
+    .contact__us__inner:hover::before{
+        opacity: 0.3;
+    }
+}
