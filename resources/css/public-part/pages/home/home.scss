@@ -28,7 +28,7 @@
                     position: relative; width: 3px; height: 120px; // height: 100%;
                 }
                 .line__top{ background: linear-gradient(transparent, $brownClr 30%); height: 160px; }
-                .line__bottom{ background: linear-gradient($brownClr, #42a9bd 80%, #33B3AE); height: 272px; }
+                .line__bottom{ background: linear-gradient($brownClr, #42a9bd 80%, #33B3AE); height:calc(100% - 208px); }
                 .middle__icon{
                     position: relative; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
                     img{
@@ -37,7 +37,7 @@
                 }
             }
             .slider__right__text{
-                width: calc(100% - 64px);
+                width: calc(100% - 64px); padding-bottom: 128px;
 
                 h1{
                     font-size: 80px; color: $txtClr2;
