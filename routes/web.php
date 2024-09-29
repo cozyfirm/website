@@ -96,7 +96,7 @@ Route::prefix('system')->middleware(['auth-middleware'])->group(function () {
         Route::get ('/preview-post/{id}',                        [BlogController::class, 'previewPost'])->name('system.blog.preview-post');
         Route::get ('/edit-post/{id}',                           [BlogController::class, 'editPost'])->name('system.blog.edit-post');
         Route::post('/update-post',                              [BlogController::class, 'updatePost'])->name('system.blog.update-post');
-        Route::get('/delete-post/{id',                           [BlogController::class, 'deletePost'])->name('system.blog.delete-post');
+        Route::get ('/delete-post/{id}',                         [BlogController::class, 'deletePost'])->name('system.blog.delete-post');
 
 
         /*

@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\Core\Filters;
 use App\Http\Controllers\Controller;
 use App\Models\Other\Project;
 use App\Traits\Http\ResponseTrait;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -42,20 +43,24 @@ class ProjectsController extends Controller{
     public function preview($id): View{
         return view($this->_path . 'create', [
             'preview' => true,
-            'project' => Project::where('id', $id)->first()
+            'project' => Project::where('id', '=',$id)->first()
         ]);
     }
     public function edit($id): View{
         return view($this->_path . 'create', [
             'edit' => true,
-            'project' => Project::where('id', $id)->first()
+            'project' => Project::where('id','=', $id)->first()
         ]);
     }
     public function update(Request $request){
         try{
-            $page = Project::where('id', $request->id)->update($request->except(['_token', 'id', 'undefined', 'files']));
+            $page = Project::where('id', '=',$request->id)->update($request->except(['_token', 'id', 'undefined', 'files']));
 
             return $this->jsonSuccess(__('Informacije uspješno ažurirane'), route('system.projects.preview', ['id' => $request->id ]));
         }catch (\Exception $e){ }
+    }
+    public function delete($id): RedirectResponse{
+        Project::where('id', '=', $id)->delete();
+        return redirect()->route('system.projects.index');
     }
 }

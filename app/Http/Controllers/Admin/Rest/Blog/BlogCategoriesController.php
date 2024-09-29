@@ -94,10 +94,20 @@ class BlogCategoriesController extends Controller{
         }catch (\Exception $e){}
     }
 
+    /**
+     * @param $id
+     * @return RedirectResponse
+     */
     public function delete ($id): RedirectResponse{
         try{
             BlogCategory::where('id', '=', $id)->delete();
         }catch (\Exception $e){}
         return redirect()->route('system.blog.categories');
     }
+
+    // -------------------------------------------------------------------------------------------------------------- //
+    /*
+     *  Pluck categories
+     */
+    public static function getCategories(){ return BlogCategory::pluck('title', 'id')->prepend('Odaberite kategoriju', ''); }
 }
