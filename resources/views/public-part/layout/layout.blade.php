@@ -29,9 +29,11 @@
     @yield('other_js')
 </head>
 
-<body>
+<body class="@isset($white) white @endisset">
 <!-- Include header -->
 @include('public-part.layout.includes.header')
+
+@include('public-part.layout.includes.breadcrumbs')
 
 @yield('content')
 

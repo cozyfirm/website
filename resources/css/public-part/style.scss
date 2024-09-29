@@ -27,6 +27,10 @@ body{
     margin: 0;
     background: $bcgClr;
 
+    &.white{
+        background: #ffffff;
+    }
+
     a{
         text-decoration: none;
     }
@@ -37,6 +41,7 @@ body{
 
 @import "layout/header";
 @import "layout/footer";
+@import "layout/breadcrumbs";
 @import "snippets/cover";
 
 
@@ -46,3 +51,5 @@ body{
 @import "pages/home/home";
 @import "pages/auth/auth";
 @import "pages/pages/single-page";
+@import "pages/blog/blog";
+@import "../admin/pages/blog/blog";

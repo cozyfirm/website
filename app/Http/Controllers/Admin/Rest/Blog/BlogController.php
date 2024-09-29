@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Rest\Blog;
 
 use App\Http\Controllers\Admin\Core\Filters;
+use App\Http\Controllers\Admin\Core\HashtagController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Admin\Rest\Blog\BlogCategoriesController;
 use App\Models\Blog\Blog;
@@ -94,6 +95,9 @@ class BlogController extends Controller{
                 $request->except(['_token', 'photo_input'])
             );
 
+            request()->merge(['id' => $blogPost->id]);
+            HashtagController::extract(request(), $blogPost);
+
             return $this->jsonSuccess(__('Uspješno ažurirano !!'), route('system.blog.preview-post', ['id' => $blogPost->id ]));
         }catch (\Exception $e){}
     }
@@ -127,6 +131,9 @@ class BlogController extends Controller{
             Blog::find($request->id)->update(
                 $request->except(['_token', 'id', 'photo-input'])
             );
+
+            request()->merge(['id' => $request->id]);
+            HashtagController::extract(request(), Blog::find($request->id));
 
             return $this->jsonSuccess(__('Uspješno ažurirano !!'), route('system.blog.preview-post', ['id' => $request->id ]));
         }catch (\Exception $e){}

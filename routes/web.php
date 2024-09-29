@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\Rest\PagesController;
 use App\Http\Controllers\Admin\Rest\ProjectsController;
 use App\Http\Controllers\Admin\Users\UsersController;
 use App\Http\Controllers\PublicPart\HomeController;
+use App\Http\Controllers\PublicPart\Blog\BlogController as PublicBlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicPart\AuthController;
 use App\Http\Controllers\PublicPart\ContactUsController;
@@ -42,6 +43,17 @@ Route::prefix('')->group(function () {
 
     Route::prefix('/contact-us')->group(function (){
         Route::get('/',                                [ContactUsController::class, 'index'])->name('public.part.contact-us');
+    });
+
+    /**
+     *  Blogging system
+     */
+    Route::prefix('/blog')->group(function (){
+        Route::get('/',                                [PublicBlogController::class, 'index'])->name('public-part.blog');
+        Route::get('/category/{id}',                   [PublicBlogController::class, 'indexWithCategories'])->name('public-part.blog.with-categories');
+        Route::get('/preview/{id}',                    [PublicBlogController::class, 'preview'])->name('public-part.blog.preview');
+
+        Route::get('/tags/{tag}',                      [PublicBlogController::class, 'tags'])->name('public-part.blog.tag');
     });
 });
 

@@ -74,13 +74,13 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <b>{{ html()->label(__('Kratki opis'))->for('short_description') }}</b>
-                                {{ html()->textarea('short_description')->class('form-control form-control-sm mt-1')->required()->maxlength(100)->value((isset($post) ? $post->short_description : ''))->isReadonly(isset($preview))->style('height : 120px;') }}
+                                {{ html()->textarea('short_description')->class('form-control form-control-sm mt-1')->required()->maxlength(240)->value((isset($post) ? $post->short_description : ''))->isReadonly(isset($preview))->style('height : 120px;') }}
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <b>{{ html()->label(__('Kratki opis (EN)'))->for('short_description_en') }}</b>
-                                {{ html()->textarea('short_description_en')->class('form-control form-control-sm mt-1')->required()->maxlength(100)->value((isset($post) ? $post->short_description_en : ''))->isReadonly(isset($preview))->style('height : 120px;') }}
+                                {{ html()->textarea('short_description_en')->class('form-control form-control-sm mt-1')->required()->maxlength(240)->value((isset($post) ? $post->short_description_en : ''))->isReadonly(isset($preview))->style('height : 120px;') }}
                             </div>
                         </div>
                     </div>

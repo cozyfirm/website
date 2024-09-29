@@ -6,8 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-class ContactUsController extends Controller
-{
+class ContactUsController extends Controller{
     protected string $_path = 'public-part.contact-us.';
 
     public function index(): View{
