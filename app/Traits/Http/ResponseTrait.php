@@ -61,4 +61,15 @@ trait ResponseTrait{
             'data' => $data
         ]);
     }
+
+    /**
+     *  Image upload response; Custom response with custom params
+     */
+    public function uploadImageResponse($image_id, $photo): JsonResponse{
+        return response()->json([
+            'code' => "0000",
+            'image_id' => $image_id,
+            'photo' => $photo
+        ]);
+    }
 }

@@ -213,16 +213,16 @@
                     </div>
                 </div>
                 <div class="inside-links active-links">
-                    <a href="#">
+                    <a href="{{ route('system.blog') }}">
                         <div class="inside-lm-link">
                             <div class="ilm-l"></div><div class="ilm-c"></div>
-                            <p>{{__('Pregled')}}</p>
+                            <p>{{__('Pregled postova')}}</p>
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="{{ route('system.blog.categories') }}">
                         <div class="inside-lm-link">
                             <div class="ilm-l"></div><div class="ilm-c"></div>
-                            <p> {{__('Novi post')}} </p>
+                            <p> {{__('Kategorije')}} </p>
                         </div>
                     </a>
                 </div>

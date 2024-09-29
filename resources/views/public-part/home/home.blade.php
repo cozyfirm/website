@@ -50,7 +50,7 @@
             <div class="experience__text">
                 <h4>{{ __('Višegodišnje iskustvo') }}</h4>
                 <h1 class="gloving__blue">{{ __('10+ godina u industriji') }}</h1>
-                <h1>{{ __('Mnoštvo godina u industriji nam je pomoglo,') }} <br> {{ __('kako da naučimo programirat :D') }} </h1>
+                <h1>{{ __('Iskustvo koje unapređuje tehnologiju i ') }} <br> {{ __('transformiše vaš biznis') }} </h1>
             </div>
         </div>
     </div>
@@ -68,9 +68,9 @@
                 <div class="line__ line__bottom"></div>
             </div>
             <div class="experience__text experience__text__padding">
-                <h4>{{ __('Ažurnost') }}</h4>
-                <h1 class="gloving__blue">{{ __('Sigurni softveri') }}</h1>
-                <h1>{{ __('Ako naš softver radi na našem računaru,') }} <br> {{ __('nadamo se da će i na vašem') }} </h1>
+                <h4>{{ __('Cutting edge') }}</h4>
+                <h1 class="gloving__blue">{{ __('Digitalna transformacija') }}</h1>
+                <h1>{{ __('Transformišemo ideje u digitalna rešenja') }} <br> {{ __('Vaš partner u IT inovacijama') }} </h1>
             </div>
         </div>
     </div>
@@ -87,9 +87,9 @@
                 <div class="line__ line__bottom"></div>
             </div>
             <div class="experience__text experience__text__padding">
-                <h4>{{ __('Ažurnost') }}</h4>
-                <h1 class="gloving__blue">{{ __('Sigurni softveri') }}</h1>
-                <h1>{{ __('Ako naš softver radi na našem računaru,') }} <br> {{ __('nadamo se da će i na vašem') }} </h1>
+                <h4>{{ __('Projekti') }}</h4>
+                <h1 class="gloving__blue">{{ __('Različite branše') }}</h1>
+                <h1>{{ __('Inovativna rješenja za projekte koji ') }} <br> {{ __('pomjeraju granice tehnologije') }} </h1>
             </div>
         </div>
     </div>
