@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\Rest\Blog\BlogCategoriesController;
 use App\Http\Controllers\Admin\Rest\Blog\BlogController;
+use App\Http\Controllers\Admin\Rest\Blog\BlogImagesController;
 use App\Http\Controllers\Admin\Rest\Blog\BlogTextController;
 use App\Http\Controllers\Admin\Rest\PagesController;
 use App\Http\Controllers\Admin\Rest\ProjectsController;
@@ -108,6 +109,18 @@ Route::prefix('system')->middleware(['auth-middleware'])->group(function () {
             Route::get ('/edit/{id}',                             [BlogTextController::class, 'edit'])->name('system.blog.text-content.edit');
             Route::post('/update',                                [BlogTextController::class, 'update'])->name('system.blog.text-content.update');
             Route::get ('/delete/{id}',                           [BlogTextController::class, 'delete'])->name('system.blog.text-content.delete');
+        });
+
+        /**
+         *  Add double images as content of post
+         */
+        Route::prefix('double-images')->group(function () {
+            Route::get ('/create/{post_id}',                      [BlogImagesController::class, 'create'])->name('system.blog.double-images.create');
+            Route::post('/save',                                  [BlogImagesController::class, 'save'])->name('system.blog.double-images.save');
+            Route::post('/save-image',                            [BlogImagesController::class, 'saveImage'])->name('system.blog.double-images.save-image');
+            Route::get ('/edit/{id}',                             [BlogImagesController::class, 'edit'])->name('system.blog.double-images.edit');
+            Route::post('/update',                                [BlogImagesController::class, 'update'])->name('system.blog.double-images.update');
+            Route::get ('/delete/{id}',                           [BlogImagesController::class, 'delete'])->name('system.blog.double-images.delete');
         });
 
         /*

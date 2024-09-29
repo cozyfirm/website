@@ -3,30 +3,30 @@
 
         <div class="bc_h_edit t-3">
             <div class="edit-icon-w t-3" title="{{__('Uredite tekstualni dio')}}">
-                <a href="{{ route('system.blog.text-content.edit', ['id' => $cont->id ]) }}">UREDITE</a>
+                <a href="{{ route('system.blog.text-content.edit', ['id' => $cont->id ]) }}">{{ __('UREDITE') }}</a>
             </div>
 
             <h1> {!! nl2br($cont->textRel->text ?? '') !!} </h1>
         </div>
 
-    @elseif($cont->category == 'dobule_images')
+    @elseif($cont->category == 'double__images')
 
         <div class="double-image double-image-bck mt-3">
             <div class="edit-icon-w t-3" title="{{__('Uredite naslov')}}">
-                <a href="{{route('system.blog.edit-doubleImages', ['id' => $cont->doubleImagesRel->id ?? '0'] )}}">UREDITE</a>
+                <a href="{{route('system.blog.double-images.edit', ['id' => $cont->id ?? '0'] )}}">{{ __('UREDITE') }}</a>
             </div>
             <div class="single-image">
-                <img src="{{asset(($cont->doubleImagesRel->leftImageRel->path ?? '').($cont->doubleImagesRel->leftImageRel->file ?? ''))}}">
+                <img src="{{asset( $cont->doubleImageRel->leftImageObject() ?? '' )}}">
             </div>
             <div class="single-image">
-                <img src="{{asset(($cont->doubleImagesRel->rightImageRel->path ?? '').($cont->doubleImagesRel->rightImageRel->file ?? ''))}}">
+                <img src="{{asset( $cont->doubleImageRel->rightImageObject() ?? '' )}}">
             </div>
         </div>
 
     @elseif($cont->category == 'slider')
         <div class="single_image-bck mt-4">
             <div class="edit-icon-w t-3" title="{{__('Uredite naslov')}}">
-                <a href="{{route('system.blog.slider.edit-slider', ['content' => $cont->id ?? '0'] )}}">UREDITE</a>
+                <a href="{{route('system.blog.slider.edit-slider', ['content' => $cont->id ?? '0'] )}}">{{ __('UREDITE') }}</a>
             </div>
 
             <div class="swiper-container swiper-{{$cont->id}}">

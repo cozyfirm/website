@@ -4,7 +4,6 @@
         margin:0px;
     }
 }
-
 .bc_h_edit, .double-image-bck, .single_image-bck{
     .edit-icon-w{
         position: absolute; right:15px; top:15px; width: 70px; height: 24px; background: #CEE024; text-align: center; border-radius:3px; opacity: 0; z-index: 100;
@@ -13,8 +12,17 @@
         }
     }
 }
-
 .bc_h_edit:hover, .double-image-bck:hover, .single_image-bck:hover{
     background:rgba(0,0,0,0.05);
     .edit-icon-w{ opacity: 1; }
+}
+
+.double-image{
+    position: relative; left:0px; width:100%; display: inline-flex; justify-content: space-between; flex-wrap: nowrap;
+    .single-image{
+        position:relative; left:0px; width:calc(50% - 15px);
+        img{
+            position: relative; left:0px; top:0px; width: 100%;
+        }
+    }
 }

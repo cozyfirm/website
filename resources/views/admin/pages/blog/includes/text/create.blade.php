@@ -33,7 +33,7 @@
         <div class="row">
             <div class="col-md-12">
                 <form action="@if(isset($create)) {{ route('system.blog.text-content.save') }} @else {{ route('system.blog.text-content.update') }} @endif" method="POST" id="js-form">
-                    @if(isset($post))
+                    @if(isset($text))
                         {{ html()->hidden('id')->class('form-control')->value($text->id) }}
                     @endif
 

@@ -9,7 +9,7 @@
                 </li>
                 <li class="nav-item"> <a class="nav-link" href="#"> / </a> </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('system.blog.text-content.create',['post_id' => $post->id ?? '0'] )}}">{{__('Dvije fotografije')}}</a>
+                    <a class="nav-link" href="{{route('system.blog.double-images.create',['post_id' => $post->id ?? '0'] )}}">{{__('Dvije fotografije')}}</a>
                 </li>
                 <li class="nav-item"> <a class="nav-link" href="#"> / </a> </li>
                 <li class="nav-item">

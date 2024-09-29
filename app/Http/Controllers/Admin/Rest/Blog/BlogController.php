@@ -66,7 +66,7 @@ class BlogController extends Controller{
         return [
             $action => true,
             'categories' => $this->getCategories(),
-            'source' => 'images/blog/',
+            'source' => $this->_source,
             'post' => Blog::where('id', '=', $id)->first(),
             // 'content' => BlogContent::where('post_id', $id)->orderBy('id')->get()
         ];

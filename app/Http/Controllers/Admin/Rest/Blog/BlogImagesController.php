@@ -2,20 +2,35 @@
 
 namespace App\Http\Controllers\Admin\Rest\Blog;
 
-use App\Http\Controllers\Admin\Core\Filters;
 use App\Http\Controllers\Controller;
 use App\Models\Blog\Blog;
 use App\Models\Blog\BlogContent;
+use App\Models\Blog\BlogDoubleImage;
 use App\Models\Blog\BlogText;
+use App\Traits\Common\FileTrait;
 use App\Traits\Http\ResponseTrait;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-class BlogTextController extends Controller{
-    use ResponseTrait;
-    protected string $_path = 'admin.pages.blog.includes.text.';
+class BlogImagesController extends Controller{
+    use FileTrait, ResponseTrait;
+    protected string $_path = 'admin.pages.blog.includes.double-images.';
+    protected string $_source = 'files/images/blog/';
+
+    /**
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function saveImage(Request $request): JsonResponse{
+        try{
+            $file = $this->saveFile($request, 'photo-input', 'blog_category');
+            return $this->uploadImageResponse($file->id, $file->name);
+        }catch (\Exception $e){
+            return $this->jsonError("6000", __("Greška prilikom upload-a slike!!"));
+        }
+    }
 
     /**
      * @param $post_id
@@ -24,7 +39,8 @@ class BlogTextController extends Controller{
     public function create($post_id): View{
         return view($this->_path.'.create', [
             'post' => Blog::where('id', '=', $post_id)->first(),
-            'create' => true
+            'create' => true,
+            'source' => $this->_source,
         ]);
     }
 
@@ -35,14 +51,14 @@ class BlogTextController extends Controller{
     public function save(Request $request): JsonResponse{
         try{
             $connection = BlogContent::create([
-                'category' => 'text',
+                'category' => 'double__images',
                 'post_id' => $request->post_id
             ]);
 
-            $text = BlogText::create([
+            $text = BlogDoubleImage::create([
                 'content_id' => $connection->id,
-                'text' => $request->text,
-                'text_en' => $request->text_en
+                'image_left' => $request->image_left,
+                'image_right' => $request->image_right
             ]);
 
             return $this->jsonSuccess(__('Uspješno ažurirano !!'), route('system.blog.preview-post', ['id' => $request->post_id ]));
@@ -61,9 +77,10 @@ class BlogTextController extends Controller{
 
         return view($this->_path.'.create', [
             'post' => $post,
-            'text' => BlogText::where('content_id', '=', $id)->first(),
+            'images' => BlogDoubleImage::where('content_id', '=', $id)->first(),
             'content' => $content,
-            'edit' => true
+            'edit' => true,
+            'source' => $this->_source
         ]);
     }
 
@@ -73,11 +90,11 @@ class BlogTextController extends Controller{
      */
     public function update(Request $request): JsonResponse{
         try{
-            $text = BlogText::where('id', '=', $request->id)->first();
+            $text = BlogDoubleImage::where('id', '=', $request->id)->first();
 
             $text->update([
-                'text' => $request->text,
-                'text_en' => $request->text_en
+                'image_left' => $request->image_left,
+                'image_right' => $request->image_right
             ]);
 
             return $this->jsonSuccess(__('Uspješno ažurirano !!'), route('system.blog.preview-post', ['id' => $request->post_id ]));

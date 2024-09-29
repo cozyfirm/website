@@ -23,4 +23,7 @@ class BlogContent extends Model{
     public function textRel(): HasOne{
         return $this->hasOne(BlogText::class, 'content_id', 'id');
     }
+    public function doubleImageRel(): HasOne{
+        return $this->hasOne(BlogDoubleImage::class, 'content_id', 'id');
+    }
 }
