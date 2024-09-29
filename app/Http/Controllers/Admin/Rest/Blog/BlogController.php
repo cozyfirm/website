@@ -124,7 +124,7 @@ class BlogController extends Controller{
      */
     public function updatePost(Request $request){
         try{
-            $post = Blog::find($request->id)->update(
+            Blog::find($request->id)->update(
                 $request->except(['_token', 'id', 'photo-input'])
             );
 

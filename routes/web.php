@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\Rest\Blog\BlogCategoriesController;
 use App\Http\Controllers\Admin\Rest\Blog\BlogController;
+use App\Http\Controllers\Admin\Rest\Blog\BlogTextController;
 use App\Http\Controllers\Admin\Rest\PagesController;
 use App\Http\Controllers\Admin\Rest\ProjectsController;
 use App\Http\Controllers\Admin\Users\UsersController;
@@ -98,6 +99,16 @@ Route::prefix('system')->middleware(['auth-middleware'])->group(function () {
         Route::post('/update-post',                              [BlogController::class, 'updatePost'])->name('system.blog.update-post');
         Route::get ('/delete-post/{id}',                         [BlogController::class, 'deletePost'])->name('system.blog.delete-post');
 
+        /**
+         *  Add blog text content via magic editor
+         */
+        Route::prefix('text-content')->group(function () {
+            Route::get ('/create/{post_id}',                      [BlogTextController::class, 'create'])->name('system.blog.text-content.create');
+            Route::post('/save',                                  [BlogTextController::class, 'save'])->name('system.blog.text-content.save');
+            Route::get ('/edit/{id}',                             [BlogTextController::class, 'edit'])->name('system.blog.text-content.edit');
+            Route::post('/update',                                [BlogTextController::class, 'update'])->name('system.blog.text-content.update');
+            Route::get ('/delete/{id}',                           [BlogTextController::class, 'delete'])->name('system.blog.text-content.delete');
+        });
 
         /*
          * Blog categories -- cannot use anymore keywords, since it requires an image for category

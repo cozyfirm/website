@@ -4,16 +4,14 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class BlogParagraphs extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create('blog__paragraphs', function (Blueprint $table) {
+        Schema::create('blog__text', function (Blueprint $table) {
             $table->id();
 
             $table->bigInteger('content_id')->unsigned();
@@ -22,8 +20,9 @@ class BlogParagraphs extends Migration
                 ->on('blog__content')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-            $table->text('paragraph');
-            $table->text('paragraph_en')->nullable();
+
+            $table->text('text');
+            $table->text('text_en')->nullable();
 
             $table->timestamps();
         });
@@ -31,11 +30,9 @@ class BlogParagraphs extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::dropIfExists('blog__paragraphs');
+        Schema::dropIfExists('blog__text');
     }
-}
+};

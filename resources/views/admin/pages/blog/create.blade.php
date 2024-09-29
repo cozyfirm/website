@@ -85,11 +85,11 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div class="row mt-3">
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="short_description_en"> {{__('Fotografija za naslovnu')}} </label>
-                            </div>
+                            {{--<div class="form-group">--}}
+                            {{--    <label for="short_description_en"> {{__('Fotografija za naslovnu')}} </label>--}}
+                            {{--</div>--}}
                             <div class="product-photo">
                                 <!-- Hidden element for file id -->
                                 {{ html()->hidden('home_image_id')->class('form-control')->value($post->home_image_id ?? '')->id("first-photo-input") }}
@@ -105,9 +105,9 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="short_description_en"> {{__('Fotografija')}} </label>
-                            </div>
+                            {{--<div class="form-group">--}}
+                            {{--    <label for="short_description_en"> {{__('Fotografija')}} </label>--}}
+                            {{--</div>--}}
                             <div class="product-photo">
                                 <!-- Hidden element for file id -->
                                 {{ html()->hidden('image_id')->class('form-control')->value($post->image_id ?? '')->id("second-photo-input") }}
@@ -130,6 +130,17 @@
                         </div>
                     </div>
                 </form>
+
+                @if(isset($preview))
+                    <br>
+                    <div class="p-0">
+                        @include('admin.pages.blog.includes.preview.header')
+
+                        @include('admin.pages.blog.includes.preview.content')
+                    </div>
+
+                    <br><br><br>
+                @endif
             </div>
         </div>
     </div>

@@ -6,6 +6,7 @@ use App\Models\Core\File;
 use App\Traits\Common\FileTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
@@ -33,5 +34,9 @@ class Blog extends Model{
     }
     public function homeImageObject(): string{
         return $this->getImage($this->home_image_id);
+    }
+
+    public function contentRel(): HasMany{
+        return $this->hasMany(BlogContent::class, 'post_id', 'id')->orderBy('id');
     }
 }

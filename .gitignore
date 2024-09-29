@@ -18,4 +18,5 @@ yarn-error.log
 /.idea
 /.vscode
 
+/public/files/images/blog
 /public/files/images/blog/categories
