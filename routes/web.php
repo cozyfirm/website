@@ -18,7 +18,7 @@ use App\Http\Controllers\PublicPart\ContactUsController;
  *  Public routes; Data visible to all visitors
  */
 
-Route::prefix('')->group(function () {
+Route::prefix('')->middleware(['public-middleware'])->group(function () {
     Route::get('/',                    [HomeController::class, 'home'])->name('public-part.home');
 
     /**

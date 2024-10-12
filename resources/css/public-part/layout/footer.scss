@@ -1,6 +1,58 @@
 .con__black {
     background-color: $bcgClr; position: relative;
     width: 100%; z-index: 10;
+
+    &.force-white{
+        background: $white;
+        footer{
+            background: $white;
+            color:$bcgClr;
+
+            .footer__con-top{
+                .footer__con-left{
+                    a{
+                        .white-logo{display: none;}
+                        .black-logo{display: flex;}
+                    }
+                    .footer__address, .footer__contact, .footer__socials{
+                        h5, a{
+                            color: $bcgClr;
+                        }
+                    }
+                    .footer__socials{
+                        svg{
+                            .svg-path{
+                                fill: $bcgClr;
+                            }
+                        }
+                    }
+                }
+                .footer__con-right{
+                    .footer__list1{
+                        .footer__list1-item{
+                            h4,a{
+                                color: $bcgClr;
+                            }
+                        }
+                    }
+                    .footer__list2{
+                        h4, a{color: $bcgClr;}
+                    }
+                }
+            }
+            .footer__con-bottom{
+                border-top: 3px solid $bcgClr; display: flex;
+                p{
+                    width: auto;
+                }
+                .con__bottom-list{
+                    a{
+                        color:$bcgClr;
+                    }
+                }
+            }
+        }
+    }
 }
 
 footer {
@@ -29,6 +81,7 @@ footer {
     img {
         margin-bottom: 2rem; height: 50px;
     }
+    .black-logo{display: none;}
 
     div {
         margin-bottom: 1.5rem;
@@ -93,8 +146,13 @@ footer {
     display: flex;
     gap: 0.75rem;
     align-items: center;
-    img{
+    img, svg{
         height: 22px;
+    }
+    svg{
+        .svg-path{
+            fill: #ffffff;
+        }
     }
 }
 
@@ -108,7 +166,7 @@ footer {
     border-color: $white;
     margin-top: 3rem;
     p{
-        font-family: "Inter", sans-serif; font-weight: 300;
+        font-family: "Inter", sans-serif; font-weight: 300; width: auto;
         span{
             margin: 0px 8px;
         }
@@ -166,9 +224,10 @@ footer {
         flex-direction: column-reverse;
         align-items: flex-start;
         p{
-            display: flex; flex-wrap: wrap;
+            display: flex; flex-wrap: wrap; width: 100%;
             a{
-                width: 100%; display: flex;
+                // width: 100%; display: flex;
+                margin-right: 8px;;
             }
             span{display: none;}
         }

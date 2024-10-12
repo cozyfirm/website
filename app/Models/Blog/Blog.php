@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @method static where(string $string, string $string1, int $int)
  * @method static create(array $except)
  * @method static find(mixed $id)
+ * @method static orderBy(string $string, string $string1)
  */
 class Blog extends Model{
     use HasFactory, FileTrait, Hashtags;

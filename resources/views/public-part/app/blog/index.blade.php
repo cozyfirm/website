@@ -70,14 +70,14 @@
     <div class="pages">
         @for($i=1; $i<=$noPages; $i++)
             <div class="single-blog-page {{ ($i == $current) ? 'focus' : '' }} " page="1">
-                <a href="{{ isset($category) ? route('public-part.blog.with-categories', ['id' => $category]) : route('public-part.blog.blog') }}?&page={{$i}}">
+                <a href="{{ isset($category) ? route('public-part.blog.with-categories', ['id' => $category]) : route('public-part.blog') }}?&page={{$i}}">
                     <p> {{$i}} </p>
                 </a>
             </div>
         @endfor
 
         <div class="single-blog-page next-one">
-            <a href="{{ isset($category) ? route('public-part.blog.with-categories', ['id' => $category]) : route('public-part.blog.blog') }}?&page={{$nextPage}}">
+            <a href="{{ isset($category) ? route('public-part.blog.with-categories', ['id' => $category]) : route('public-part.blog') }}?&page={{$nextPage}}">
                 <p>Sljedeća stranica</p>
             </a>
         </div>
