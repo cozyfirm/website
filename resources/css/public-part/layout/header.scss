@@ -39,6 +39,14 @@ header{
                         border: none;
                     }
                 }
+                .open__mobile_menu{
+                    .burger-black{
+                        display: flex;
+                    }
+                    .burger-white{
+                        display: none;
+                    }
+                }
             }
         }
     }
@@ -142,6 +150,12 @@ header{
             }
             .open__mobile_menu{
                 display: none;
+                .burger-black{
+                    display: none;
+                }
+                .burger-white{
+                    display: flex;
+                }
             }
             @media (max-width: 1000px) { .open__mobile_menu{display: unset;} }
         }
@@ -155,6 +169,11 @@ header{
 
     &.active{
         left: 0px;
+    }
+    &.force-white{
+        //.mh__header{
+        //    i{color: $bcgClr;}
+        //}
     }
 
     @media (max-width: 1000px) {

@@ -66,7 +66,7 @@
                     </div>
                 </div>
                 <div class="ihl__link">
-                    <a href="#">{{ __('Kontaktirajte nas') }}</a>
+                    <a href="{{ route('public.part.contact-us') }}">{{ __('Kontaktirajte nas') }}</a>
                 </div>
             </div>
         </div>
@@ -83,13 +83,14 @@
             </a>
 
             <div class="ihb__btn ihb__btn_borderless open__mobile_menu">
-                <img src="{{ asset('files/images/default/burger.png') }}" alt="">
+                <img class="burger-white" src="{{ asset('files/images/default/burger.png') }}" alt="">
+                <img class="burger-black" src="{{ asset('files/images/default/burger_black.png') }}" alt="">
             </div>
         </div>
     </div>
 </header>
 
-<div class="mobile__header">
+<div class="mobile__header @isset($white) force-white @endisset">
     <div class="mh__header">
         <div class="logo_wrapper">
             <img src="{{ asset('files/images/default/logo.png') }}" alt="">
@@ -149,7 +150,7 @@
 
         <div class="single_link">
             <div class="link__text">
-                <a href="#">
+                <a href="{{ route('public.part.contact-us') }}">
                     <h4>{{ __('Kontaktirajte nas') }}</h4>
                 </a>
             </div>
@@ -163,30 +164,22 @@
             </div>
 
             <div class="submenu__wrapper">
-                <div class="submenu__link">
-                    <h6>{{ __('Najnovije') }}</h6>
-                </div>
-                <div class="submenu__link">
-                    <a href="#">{{ __('Software') }}</a>
-                </div>
-                <div class="submenu__link">
-                    <a href="#">{{ __('Embedded Systems') }}</a>
-                </div>
+                @foreach($lastPosts as $post)
+                    <div class="submenu__link">
+                        <a href="{{ route('public-part.blog.preview', ['id' => $post->id ]) }}">{{ $post->title ?? '' }}</a>
+                    </div>
+                @endforeach
 
                 <hr>
 
                 <div class="submenu__link">
-                    <h6>{{ __('Tehnologije') }}</h6>
+                    <h6>{{ __('Kategorije') }}</h6>
                 </div>
-                <div class="submenu__link">
-                    <a href="#">{{ __('Web Based') }}</a>
-                </div>
-                <div class="submenu__link">
-                    <a href="#">{{ __('React Native') }}</a>
-                </div>
-                <div class="submenu__link">
-                    <a href="#">{{ __('C / C++') }}</a>
-                </div>
+                @foreach($blogCategories as $category)
+                    <div class="submenu__link">
+                        <a href="{{ route('public-part.blog.with-categories', ['id' => $category->id ]) }}">{{ $category->title }}</a>
+                    </div>
+                @endforeach
             </div>
         </div>
 

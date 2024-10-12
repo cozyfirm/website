@@ -11,9 +11,9 @@
         position: relative; left:0px; top:0px; margin-bottom: 15px; padding:5px 15px; border-radius: 8px;
 
         .nt-inline{
-            display: inline-flex;
+            display: inline-flex; align-items: center;
             .nt-icon{
-                margin-right:10px; font-size:15px; padding-top:4px;
+                margin-right:10px; font-size:14px; padding: 0px;
             }
             p{
                 margin:0px; font-weight: bold;
