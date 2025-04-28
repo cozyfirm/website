@@ -40,11 +40,11 @@
 }
 
 .breadcrumbs-w{
-    position: relative; left:0px; top:0px; width: 100%; height: 50px; background: #EFEFEF;
+    position: relative; left:0px; top:0px; width: 100%; padding: 16px 0px; background: #EFEFEF;
     .breadcrumbs{
-        position: relative; left:calc(50% - 700px); width: 1400px; height: 50px; display: inline-flex; justify-content: space-between;
+        position: relative; left:calc(50% - 700px); width: 1400px; display: inline-flex; justify-content: space-between; align-items: center;
         .bc-left{
-            position: relative; left:0px; top:0px; display: flex; align-items: center; height: 100%;
+            position: relative; left:0px; top:0px; display: flex; align-items: center; height: 100%; align-content: center;
             h2{
                 font-size:20px; margin: 0px;
             }
