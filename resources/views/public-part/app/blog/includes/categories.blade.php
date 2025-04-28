@@ -26,7 +26,7 @@
                     <div class="image-part">
                         <img src="{{ asset($post->imageObject()) }}" alt="">
                     </div>
-                    <div class="text-part">
+                    <div class="recent-text-part">
                         <h5> {{ $post->title ?? '' }} </h5>
                         <span> {{$post->created_at->format('d.M.Y H:i') }} </span>
                     </div>
