@@ -3,7 +3,7 @@ import {Loader, LoaderOptions} from 'google-maps';
 // or const {Loader} = require('google-maps'); without typescript
 
 
-const hqLat = 43.8552164459567, hqLon = 18.38745423505708;
+const hqLat = 43.8822152, hqLon = 18.3834785;
 const options = {/* todo */};
 const loader = new Loader('AIzaSyAApiBLPehhhJkDFqzlfNGN99n18N4PZxA', options);
 

@@ -4,6 +4,7 @@ namespace App\Models\Blog;
 
 use App\Models\Core\File;
 use App\Models\Core\Hashtags\Hashtag;
+use App\Models\User;
 use App\Traits\Blog\Hashtags;
 use App\Traits\Common\FileTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -60,5 +61,9 @@ class Blog extends Model{
                 $query->where('parent', $id)->where('category', 'LIKE', '%blog%');
             });
         })->get();
+    }
+
+    public function userRel(): HasOne{
+        return $this->hasOne(User::class, 'id', 'created_by');
     }
 }
