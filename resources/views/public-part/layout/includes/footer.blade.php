@@ -10,7 +10,10 @@
 
                 <div class="footer__address">
                     <h5 class="heading-h5">Adresa:</h5>
-                    <a target="_blank" href="https://maps.app.goo.gl/JaxgLqWyqMFznR7J9"> Kobilja glava 35, 71000 Sarajevo</a>
+                    <a target="_blank" href="https://www.google.com/maps/place/Kobilja+glava+18,+Sarajevo+71323/@43.882161,18.383603,99m/data=!3m1!1e3!4m14!1m7!3m6!1s0x4758ceb03915beef:0x5252196ca9e1cb53!2sKobilja+glava+35!3b1!8m2!3d43.8821681!4d18.3831942!3m5!1s0x4758ceb03ef74adb:0x98e09e2e9bf05926!8m2!3d43.8822321!4d18.3837665!16s%2Fg%2F11ljynlv25?entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoASAFQAw%3D%3D">
+                        Kobilja glava 35, 71320 Vogošća <br>
+                        Bosna i Hercegovina
+                    </a>
                 </div>
                 <div class="footer__contact">
                     <h5 class="heading-h5">Kontakt:</h5>

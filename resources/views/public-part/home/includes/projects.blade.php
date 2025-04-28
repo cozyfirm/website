@@ -46,7 +46,7 @@
                         <div class="pr_col pr_col_col"> {{ $project->category }} </div>
                         <div class="pr_col pr_col_col"> <img src="{{ asset('files/images/icons/commit.png') }}" alt=""> {{ $project->commits }} </div>
                         <div class="pr_col pr_col_users"> {{ $project->collaborators }} </div>
-                        <div class="pr_col pr_col_more">
+                        <div class="pr_col pr_col_more" title="{{ __('Više informacija') }}">
                             <a href="{{ $project->link }}">više info</a>
                         </div>
                     </div>

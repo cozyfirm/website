@@ -345,12 +345,16 @@
     }
 
     .categories-part{
-        position:relative;
+        position:sticky;
         left:0px;
-        top:0px;
+        top:64px;
         width:300px;
         min-height: 300px;
         padding-bottom: 64px;
+
+        position: -webkit-sticky; /* for Safari */
+        position: sticky;
+        align-self: flex-start; /* <-- this is the fix */
 
         h5{margin:0px; font-size:18px; margin-bottom:30px;}
         .category-row{
