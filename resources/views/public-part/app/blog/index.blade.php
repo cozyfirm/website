@@ -9,19 +9,19 @@
         @endsection
     @endsection
 
-    <div class="top-image">
-        <img src="{{ $headerImage->getImg() }}" alt="">
-        <div class="top-image-shadow">
-            <div class="image-shadow-text">
-                <h5> {{ env('APP_NAME') }} </h5>
-                <h1> @if(isset($categoryName)) {{ $categoryName->title ?? __('NOVOSTI') }} @else {{__('NOVOSTI')}} @endif</h1>
-                <div class="shadow-image-lines">
-                    <div class="long-line"></div>
-                    <div class="short-line"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+{{--    <div class="top-image">--}}
+{{--        <img src="{{ $headerImage->getImg() }}" alt="">--}}
+{{--        <div class="top-image-shadow">--}}
+{{--            <div class="image-shadow-text">--}}
+{{--                <h5> {{ env('APP_NAME') }} </h5>--}}
+{{--                <h1> @if(isset($categoryName)) {{ $categoryName->title ?? __('NOVOSTI') }} @else {{__('NOVOSTI')}} @endif</h1>--}}
+{{--                <div class="shadow-image-lines">--}}
+{{--                    <div class="long-line"></div>--}}
+{{--                    <div class="short-line"></div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 
     <div class="split-on-two">
         <div class="posts-part">
