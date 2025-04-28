@@ -26,3 +26,12 @@
         }
     }
 }
+
+@media screen and (max-width: 800px){
+    .double-image{
+        gap: 20px; flex-wrap: wrap;
+        .single-image{
+            width: 100%;
+        }
+    }
+}

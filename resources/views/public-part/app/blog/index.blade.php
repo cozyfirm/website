@@ -36,7 +36,8 @@
                         </div>
                     </div>
                     <div class="post">
-                        <img src="{{ asset($post->imageObject()) }}" alt="">
+                        <img class="desktop-image" src="{{ asset($post->imageObject()) }}" alt="">
+                        <img class="mobile-image" src="{{ asset($post->homeImageObject()) }}" alt="">
 
                         <h3>{{$post->title}}</h3>
                         <div class="more-details">
