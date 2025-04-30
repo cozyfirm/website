@@ -65,7 +65,7 @@
                         </div>
                     </div>
                     <div class="home-row-items">
-                        <div class="home-icon go-to" link="">
+                        <div class="home-icon go-to" link="{{ route('system.api-system.api.index') }}">
                             <i class="fas fa-server"></i>
                             <p>{{ __('Integracije') }}</p>
                         </div>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\Other\API\APIController;
 use App\Http\Controllers\Admin\Rest\Blog\BlogCategoriesController;
 use App\Http\Controllers\Admin\Rest\Blog\BlogController;
 use App\Http\Controllers\Admin\Rest\Blog\BlogImagesController;
@@ -150,5 +151,18 @@ Route::prefix('system')->middleware(['auth-middleware'])->group(function () {
             Route::post('/update',                         [BlogCategoriesController::class, 'update'])->name('system.blog.categories.update');
             Route::get ('/delete/{id}',                    [BlogCategoriesController::class, 'delete'])->name('system.blog.categories.delete');
         });
+    });
+
+    /**
+     *  API System
+     */
+    Route::prefix('api-system')->group(function () {
+        Route::get('/',                          [APIController::class, 'index'])->name('system.api-system.api.index');
+        Route::get ('/create',                   [APIController::class, 'create'])->name('system.api-system.api.create');
+        Route::post('/save',                     [APIController::class, 'save'])->name('system.api-system.api.save');
+        Route::get ('/preview/{id}',             [APIController::class, 'preview'])->name('system.api-system.api.preview');
+        Route::get ('/edit/{id}',                [APIController::class, 'edit'])->name('system.api-system.api.edit');
+        Route::post('/update',                   [APIController::class, 'update'])->name('system.api-system.api.update');
+        Route::get ('/delete/{id}',              [APIController::class, 'delete'])->name('system.api-system.api.delete');
     });
 });

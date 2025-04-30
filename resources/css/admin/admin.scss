@@ -11,6 +11,10 @@ body{
     a{
         text-decoration: none; color: #333333;
     }
+
+    input[readonly], textarea[readonly], select[disabled] {
+        background-color: #FFFFFF !important;
+    }
 }
 
 @import "pages/includes/colors";
@@ -19,6 +23,7 @@ body{
 @import "layout/filters";
 @import "../style/notify";
 @import "pages/dashboard";
+@import "pages/includes/right-menu";
 /**
  *  Include core files
  */
