@@ -8,10 +8,13 @@ use App\Models\Blog\Blog;
 use App\Models\Blog\BlogCategory;
 use App\Models\Blog\BlogContent;
 use App\Models\Core\Hashtags\Hashtag;
+use App\Traits\Common\VisitorTrait;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class BlogController extends Controller{
+    use VisitorTrait;
+
     protected string $_path = 'public-part.app.blog.';
 
     /**
@@ -90,6 +93,8 @@ class BlogController extends Controller{
         Blog::where('id', '=', $id)->update(['views' => ($post->views + 1)]);
 
         $popular = Blog::where('published', '=', 1)->orderBy('views', 'DESC')->take(3)->get();
+
+        $this->updateVisitor('blog', $id);
 
         return view($this->_path.'preview', [
             'content' => BlogContent::where('post_id', '=', $id)->orderBy('id')->get(),

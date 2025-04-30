@@ -42,7 +42,7 @@
 <div class="s-top-menu">
     <div class="app-name">
         <a title="{{__('Naslovna strana')}}">
-            <h1> Alkaris d.o.o </h1>
+            <img src="{{ asset('files/images/default/logo.png') }}" alt="">
         </a>
         <i class="fas fa-bars t-3 system-m-i-t" title="{{__('Otvorite / zatvorite MENU')}}"></i>
     </div>
@@ -61,9 +61,9 @@
 {{--                <div class="number-of"><p>3</p></div>--}}
 {{--            </div>--}}
 
-            <a href="#" target="_blank">
+            <a href="https://cozyfirm.com/" target="_blank">
                 <div class="single-li">
-                    <p> {{__('Blog')}} </p>
+                    <p> {{__('Homepage')}} </p>
                 </div>
             </a>
 
@@ -111,7 +111,7 @@
 {{--            <img class="mp-profile-image" title="{{__('Promijenite sliku profila')}}" src="{{ isset($loggedUser->profileImgRel) ? asset( $loggedUser->profileImgRel->getFile()) : asset('images/user.png')}}" alt="">--}}
         </div>
         <div class="user-desc">
-            <h4> {{ __('Root Admin') }} </h4>
+            <h4> {{ Auth()->user()->name ?? 'John Doe' }} </h4>
             <p> {{ __('Administrator') }} </p>
             <p>
                 <i class="fas fa-circle"></i>
@@ -130,7 +130,7 @@
                 <i class="fas fa-chart-area"></i>
             </div>
         </div>
-        <a href="#" class="menu-a-link">
+        <a href="{{ route('system.dashboard') }}" class="menu-a-link">
             <div class="s-lm-wrapper">
                 <div class="s-lm-s-elements">
                     <div class="s-lms-e-img">

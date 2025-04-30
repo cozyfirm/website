@@ -13,10 +13,12 @@ body{
     }
 }
 
+@import "pages/includes/colors";
 @import "layout/menu";
 @import "layout/content";
 @import "layout/filters";
 @import "../style/notify";
+@import "pages/dashboard";
 /**
  *  Include core files
  */
