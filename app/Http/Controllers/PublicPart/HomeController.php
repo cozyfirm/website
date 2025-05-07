@@ -22,7 +22,7 @@ class HomeController extends Controller{
             'HomeController' => SinglePage::where('id', 1)->first(),
             'inProgress' => Project::where('state','=', 'in-progress')->get(),
             'beta' => Project::where('state', '=', 'beta')->get(),
-            'production' => Project::where('state', '', 'production')->orderBy('title')->get()
+            'production' => Project::where('state', '=', 'production')->orderBy('title')->get()
         ]);
     }
 
